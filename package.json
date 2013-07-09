@@ -1,0 +1,41 @@
+{
+  "name": "generator-magento",
+  "version": "0.0.1",
+  "description": "Yeoman generator for scaffolding out basic Magento skin assets.",
+  "keywords": [
+    "yeoman-generator",
+    "magento",
+    "skin",
+    "theme",
+    "front-end"
+  ],
+  "homepage": "https://github.com/matt-bailey/generator-magento",
+  "bugs": "https://github.com/matt-bailey/generator-magento/issues",
+  "author": {
+    "name": "Matt Bailey",
+    "email": "me@mattbailey.co",
+    "url": "https://github.com/matt-bailey"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/matt-bailey/generator-magento.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.12.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.10.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
