@@ -1,5 +1,4 @@
 # Generator-bones
-[![Build Status](https://secure.travis-ci.org/matt-bailey/generator-bones.png?branch=master)](https://travis-ci.org/matt-bailey/generator-bones)
 
 [Yeoman](http://yeoman.io/) generator for scaffolding out a basic web project.
 
