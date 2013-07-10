@@ -5,14 +5,14 @@ var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
 
-describe('magento generator', function () {
+describe('bones generator', function () {
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('magento:app', [
+      this.app = helpers.createGenerator('bones:app', [
         '../../app'
       ]);
       done();
