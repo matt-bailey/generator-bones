@@ -17,7 +17,7 @@ var MagentoGenerator = module.exports = function MagentoGenerator(args, options,
   }
 
   // resolved to mocha by default
-  this.hookFor('test-framework', { as: 'src' });
+  this.hookFor('test-framework', { as: 'app' });
 
   this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'index.html'));
   this.mainCoffeeFile = 'console.log "Hello from CoffeeScript!"';
