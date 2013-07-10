@@ -12,7 +12,7 @@ It's based on [generator-webapp](https://github.com/yeoman/generator-webapp), bu
 - Run: `yo bones`
 - Run: `grunt`
 
-This is what your project will look like once you've run `yo bones` and then `grunt`:
+This is what your project will look like once you've run `yo bones` and `grunt`:
 
 ![Bones - Scaffolding](http://db.tt/tjtgPPxH)
 
