@@ -4,7 +4,7 @@ var path = require('path');
 var spawn = require('child_process').spawn;
 var yeoman = require('yeoman-generator');
 
-var MagentoGenerator = module.exports = function MagentoGenerator(args, config) {
+var MagentoGenerator = module.exports = function MagentoGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   // setup the test-framework property, Gruntfile template will need this
@@ -36,7 +36,7 @@ MagentoGenerator.prototype.askFor = function askFor() {
 
   // have Yeoman greet the user.
   console.log(this.yeoman);
-  console.log('This generator scaffolds out basic Magento skin assets. \n\nLocate your Yeoman project outside of your shop root and symlink in the required assets from the `build` folder.\n');
+  console.log('This generator scaffolds out basic Magento skin assets. \n\nLocate your Yeoman project outside of your shop root and symlink in the required folders/assets from the `build` folder.\n');
 
   var prompts = [{
     name: 'interfaceName',
