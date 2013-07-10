@@ -1,16 +1,16 @@
 {
-  "name": "generator-magento",
+  "name": "generator-bones",
   "version": "0.0.1",
-  "description": "Yeoman generator for scaffolding out basic Magento skin assets.",
+  "description": "Yeoman generator for scaffolding out a basic web project.",
   "keywords": [
     "yeoman-generator",
-    "magento",
+    "bones",
     "skin",
     "theme",
     "front-end"
   ],
-  "homepage": "https://github.com/matt-bailey/generator-magento",
-  "bugs": "https://github.com/matt-bailey/generator-magento/issues",
+  "homepage": "https://github.com/matt-bailey/generator-bones",
+  "bugs": "https://github.com/matt-bailey/generator-bones/issues",
   "author": {
     "name": "Matt Bailey",
     "email": "me@mattbailey.co",
@@ -19,7 +19,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/matt-bailey/generator-magento.git"
+    "url": "git://github.com/matt-bailey/generator-bones.git"
   },
   "scripts": {
     "test": "mocha"

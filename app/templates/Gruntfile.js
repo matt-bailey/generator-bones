@@ -43,10 +43,12 @@ module.exports = function (grunt) {
                 },
                 files: [
                     '<%%= yeoman.src %>/*.html',
+                    '<%%= yeoman.src %>/{templates}/{,*/}*.hbs',
                     '{.tmp,<%%= yeoman.src %>}/css/{,*/}*.css',
                     '{.tmp,<%%= yeoman.src %>}/js/{,*/}*.js',
                     '<%%= yeoman.src %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-                ]
+                ],
+                tasks: ['assemble', 'livereload']
             }
         },
         connect: {
@@ -173,34 +175,31 @@ module.exports = function (grunt) {
         /*concat: {
             build: {}
         },*/
-        requirejs: {
-            build: {
-                // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
-                options: {
-                    // `name` and `out` is set by grunt-usemin
-                    baseUrl: yeomanConfig.src + '/js',
-                    optimize: 'none',
-                    // TODO: Figure out how to make sourcemaps work with grunt-usemin
-                    // https://github.com/yeoman/grunt-usemin/issues/30
-                    //generateSourceMaps: true,
-                    // required to support SourceMaps
-                    // http://requirejs.org/docs/errors.html#sourcemapcomments
-                    preserveLicenseComments: false,
-                    useStrict: true,
-                    wrap: true
-                    //uglify2: {} // https://github.com/mishoo/UglifyJS2
-                }
-            }
-        },
         rev: {
             build: {
                 files: {
                     src: [
                         '<%%= yeoman.build %>/js/{,*/}*.js',
                         '<%%= yeoman.build %>/css/{,*/}*.css',
-                        '<%%= yeoman.build %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
                         '<%%= yeoman.build %>/css/fonts/*'
                     ]
+                }
+            }
+        },
+        assemble: {
+            options: {
+                flatten: true,
+                layout: '<%%= yeoman.src %>/templates/layouts/default.hbs',
+                partials: '<%%= yeoman.src %>/templates/partials/*.hbs'
+            },
+            pages: {
+                files: {
+                    '<%%= yeoman.src %>/': ['<%%= yeoman.src %>/templates/pages/*.hbs', '!<%%= yeoman.src %>/templates/pages/index.hbs']
+                }
+            },
+            index: {
+                files: {
+                    '<%%= yeoman.src %>/': ['<%%= yeoman.src %>/templates/pages/index.hbs']
                 }
             }
         },
@@ -227,14 +226,12 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        svgmin: {
-            build: {
-                files: [{
-                    expand: true,
-                    cwd: '<%%= yeoman.src %>/images',
-                    src: '{,*/}*.svg',
-                    dest: '<%%= yeoman.build %>/images'
-                }]
+        grunticon: {
+            myIcons: {
+                options: {
+                    src: '<%%= yeoman.src %>/images/svg-src/',
+                    dest: '<%%= yeoman.src %>/images/svg-build/'
+                }
             }
         },
         cssmin: {
@@ -283,9 +280,10 @@ module.exports = function (grunt) {
                     cwd: '<%%= yeoman.src %>',
                     dest: '<%%= yeoman.build %>',
                     src: [
+                        '*.html',
                         '*.{ico,png,txt}',
                         '.htaccess',
-                        'images/{,*/}*.{webp,gif}',
+                        'images/!(svg-src)/**',
                         'css/fonts/*'
                     ]
                 }]
@@ -303,19 +301,18 @@ module.exports = function (grunt) {
                 'coffee',
                 'compass',
                 'imagemin',
-                'svgmin',
                 'htmlmin'
             ]
         },
         bower: {
             options: {
                 exclude: ['modernizr']
-            },
-            all: {
-                rjsConfig: '<%%= yeoman.src %>/js/main.js'
             }
         }
     });
+
+    grunt.loadNpmTasks('assemble');
+    grunt.loadNpmTasks('grunt-grunticon');
 
     grunt.registerTask('server', function (target) {
         if (target === 'build') {
@@ -340,9 +337,10 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:build',
+        'assemble',
+        'grunticon',
         'useminPrepare',
         'concurrent:build',
-        'requirejs',
         'concat',
         'cssmin',
         'uglify',
