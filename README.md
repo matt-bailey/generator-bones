@@ -1,4 +1,4 @@
-# Generator-bones
+# generator-bones
 
 [Yeoman](http://yeoman.io/) generator for scaffolding out a basic web project.
 
