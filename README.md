@@ -3,7 +3,7 @@
 
 [Yeoman](http://yeoman.io/) generator for scaffolding out a basic web project.
 
-It includes the [Grunt](http://gruntjs.com/) tasks [Grunticon](https://github.com/filamentgroup/grunticon) (for all your SVG needs), and [Assemble](https://github.com/assemble/assemble) (for creating your own pattern library or style guide perhaps?).
+It's based on [generator-webapp](https://github.com/yeoman/generator-webapp), but simplified and with some other useful stuff added in - [Grunticon](https://github.com/filamentgroup/grunticon) for all your SVG needs, and [Assemble](https://github.com/assemble/assemble) for building static HTML files from modular templates and data.
 
 ## Getting started
 
@@ -14,3 +14,7 @@ It includes the [Grunt](http://gruntjs.com/) tasks [Grunticon](https://github.co
 
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
+
+## Made by...
+
+[@_mattbailey](http://twitter.com/_mattbailey) at [GPMD](http://www.gpmd.co.uk/).

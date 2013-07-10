@@ -28,7 +28,7 @@ BonesGenerator.prototype.askFor = function askFor() {
 
   // have Yeoman greet the user.
   console.log(this.yeoman);
-  console.log('This generator scaffolds out a basic web project. \n\nIt includes the Grunt tasks Grunticon (for all your SVG needs), and Assemble (for creating your own pattern library or style guide perhaps?).');
+  console.log('This generator scaffolds out a basic web project. \n\nIt\'s based on generator-webapp, but simplified and with some other useful stuff added in - Grunticon for all your SVG needs, and Assemble for building static HTML files from modular templates and data.');
 
   var prompts = [{
     name: 'projectName',
