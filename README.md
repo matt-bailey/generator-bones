@@ -11,7 +11,7 @@ It's based on [generator-webapp](https://github.com/yeoman/generator-webapp), bu
 - Install the generator: `npm install -g generator-bones`
 - Run: `yo bones`
 
-This is what your project will look like once you've run `yo bones` and then `grunt`.
+This is what your project will look like once you've run `yo bones` and then `grunt`:
 
 ![Bones - Scaffolding](http://db.tt/tjtgPPxH)
 
