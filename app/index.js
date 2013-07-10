@@ -4,11 +4,12 @@ var path = require('path');
 var spawn = require('child_process').spawn;
 var yeoman = require('yeoman-generator');
 
-var MagentoGenerator = module.exports = function MagentoGenerator(args, options, config) {
+var MagentoGenerator = module.exports = function MagentoGenerator(args, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   // setup the test-framework property, Gruntfile template will need this
   // this.testFramework = options['test-framework'] || 'mocha';
+  this.testFramework = 'mocha';
 
   // for hooks to resolve on mocha by default
   // if (!options['test-framework']) {
@@ -16,7 +17,7 @@ var MagentoGenerator = module.exports = function MagentoGenerator(args, options,
   // }
 
   // resolved to mocha by default
-  // this.hookFor('test-framework', { as: 'app' });
+  this.hookFor('mocha', { as: 'app' });
 
   this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'index.html'));
   this.mainCoffeeFile = 'console.log "Hello from CoffeeScript!"';
@@ -40,17 +41,12 @@ MagentoGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     name: 'interfaceName',
     message: 'What is the `interface` name for your Magento theme (i.e. /skin/frontend/[interface-name]/)?'
-  },
-  {
-    name: 'themeName',
-    message: 'What is the `theme` name for your Magento theme (i.e. /skin/frontend/[interface-name]/[theme-name]/)?'
   }];
 
   this.prompt(prompts, function (props) {
     // `props` is an object passed in containing the response values, named in
     // accordance with the `name` property from your prompt object. So, for us:
     this.interfaceName = props.interfaceName;
-    this.themeName = props.themeName;
 
     cb();
   }.bind(this));

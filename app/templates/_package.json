@@ -1,5 +1,5 @@
 {
-  "name": "<%= _.slugify(interfaceName + '-' + themeName) %>",
+  "name": "<%= _.slugify(interfaceName) %>",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
