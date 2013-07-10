@@ -4,20 +4,19 @@ var path = require('path');
 var spawn = require('child_process').spawn;
 var yeoman = require('yeoman-generator');
 
-
 var MagentoGenerator = module.exports = function MagentoGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   // setup the test-framework property, Gruntfile template will need this
-  this.testFramework = options['test-framework'] || 'mocha';
+  // this.testFramework = options['test-framework'] || 'mocha';
 
   // for hooks to resolve on mocha by default
-  if (!options['test-framework']) {
-    options['test-framework'] = 'mocha';
-  }
+  // if (!options['test-framework']) {
+  //   options['test-framework'] = 'mocha';
+  // }
 
   // resolved to mocha by default
-  this.hookFor(this.testFramework , { as: 'app' });
+  // this.hookFor('test-framework', { as: 'app' });
 
   this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'index.html'));
   this.mainCoffeeFile = 'console.log "Hello from CoffeeScript!"';
