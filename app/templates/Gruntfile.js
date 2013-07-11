@@ -42,13 +42,12 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '<%%= yeoman.src %>/*.html',
-                    '<%%= yeoman.src %>/{templates}/{,*/}*.hbs',
+                    '<%%= yeoman.src %>/templates/{,*/}*.hbs',
                     '{.tmp,<%%= yeoman.src %>}/css/{,*/}*.css',
                     '{.tmp,<%%= yeoman.src %>}/js/{,*/}*.js',
                     '<%%= yeoman.src %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ],
-                tasks: ['assemble', 'livereload']
+                tasks: ['assemble']
             }
         },
         connect: {
