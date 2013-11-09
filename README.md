@@ -10,6 +10,7 @@ It's based on [generator-webapp](https://github.com/yeoman/generator-webapp), bu
     `npm install -g yo`
 - Install the generator: `npm install -g generator-bones`
 - Run: `yo bones`
+- Run `npm install` (to install dependent packages)
 - Run: `grunt`
 
 This is what your project will look like once you've run `yo bones` and `grunt`:
