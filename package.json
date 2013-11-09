@@ -21,15 +21,9 @@
     "type": "git",
     "url": "git://github.com/matt-bailey/generator-bones.git"
   },
-  /*"scripts": {
-    "test": "mocha"
-  },*/
   "dependencies": {
     "yeoman-generator": "~0.13.4"
   },
-  /*"devDependencies": {
-    "mocha": "~1.10.0"
-  },*/
   "engines": {
     "node": ">=0.8.0"
   },
