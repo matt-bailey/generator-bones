@@ -1,5 +1,7 @@
 # generator-bones
 
+[![Build Status](https://travis-ci.org/matt-bailey/generator-bones.png)](https://travis-ci.org/matt-bailey/generator-bones)
+
 [Yeoman](http://yeoman.io/) generator for scaffolding out a basic web project.
 
 It's based on [generator-webapp](https://github.com/yeoman/generator-webapp), but somewhat simplified and with some other useful stuff added in - [Grunticon](https://github.com/filamentgroup/grunticon) for all your SVG needs, and [Assemble](https://github.com/assemble/assemble) for building static HTML files from modular templates and data.
