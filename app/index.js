@@ -8,9 +8,9 @@ var BonesGenerator = module.exports = function BonesGenerator(args, options, con
   yeoman.generators.Base.apply(this, arguments);
 
   // setup the test-framework property, Gruntfile template will need this
-  this.testFramework = 'mocha';
+  //this.testFramework = 'mocha';
   // resolved to mocha by default
-  this.hookFor('mocha', { as: 'app' });
+  //this.hookFor('mocha', { as: 'app' });
 
   // this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'index.html'));
 
