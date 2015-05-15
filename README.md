@@ -1,3 +1,5 @@
+**PLEASE NOTE: This Yeoman generator is pretty old now and I haven't had the time to update or provide support for it. You're probably better off using the default [Yeoman webapp generator](https://github.com/yeoman/generator-webapp).**
+
 # generator-bones
 
 [![Build Status](https://travis-ci.org/matt-bailey/generator-bones.png)](https://travis-ci.org/matt-bailey/generator-bones)
